@@ -45,6 +45,31 @@ body {
   margin-top: -70px; 
 }
 
+.earthquake-icon {
+  font-size: 2rem; 
+  color: #121212
+}
+
+.flood-icon {
+  font-size: 2rem; 
+  color: #0053cf; 
+}
+
+.storm-icon {
+  font-size: 2rem; 
+  color: #ffea00; 
+}
+
+.seaLakeIce-icon {
+  font-size: 2rem; 
+  /* color: #ccfbff;  */
+}
+
+.volcano-icon {
+  font-size: 2rem; 
+  color: #ff1900; 
+}
+
 .wildfire-icon {
   font-size: 2rem; 
   color: #f76014; 
