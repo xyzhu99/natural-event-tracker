@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react'
 import earthquake_icon from '@iconify-icons/ri/earthquake-fill'
-import flood_icon from '@iconify-icons/carbon/flood-warning'
+import flood_icon from '@iconify-icons/ri/flood-fill'
 import storm_icon from '@iconify-icons/ion/thunderstorm'
 import seaLakeIce_icon from '@iconify-icons/openmoji/iceberg'
 import volcano_icon from '@iconify-icons/maki/volcano-15'
