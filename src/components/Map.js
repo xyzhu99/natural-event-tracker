@@ -12,26 +12,25 @@ const Map = ({ eventData, center, zoom }) => {
     const eventId = ev.categories[0].id; 
     if ( eventId === "earthquakes" || eventId === "floods" || eventId === "severeStorms" || eventId === "seaLakeIce" || eventId === "volcanoes" || eventId === "wildfires" ) {
       if ( ev.geometry[ev.geometry.length-1].type === "Point" ) {
-        const eventLat = ev.geometry[ev.geometry.length-1].coordinates[1] 
+        const eventLat = ev.geometry[ev.geometry.length-1].coordinates[1]
         const eventLng = ev.geometry[ev.geometry.length-1].coordinates[0]
-        return <LocationMarker 
+        return <LocationMarker
           eventType={eventId}
           lat={eventLat}
           lng={eventLng}
-          onClick={ () => setLocationInfo( { id: ev.id, title: ev.title, date: ev.geometry[ev.geometry.length-1].date } ) }
+          onClick={ () => setLocationInfo( { id: ev.id, title: ev.title, date: ev.geometry[ev.geometry.length-1].date, locationType: "Point" } ) }
         />
       } else if ( ev.geometry[ev.geometry.length-1].type === "Polygon" ) {
-        return null
+        return ev.geometry[ev.geometry.length-1].coordinates[0].map( (pair_coordinates) => (
+          <LocationMarker
+            eventType={eventId}
+            lat={pair_coordinates[1]}
+            lng={pair_coordinates[0]}
+            onClick={ () => setLocationInfo( { id: ev.id, title: ev.title, date: ev.geometry[ev.geometry.length-1].date, locationType: "Polygon" } ) }
+          />
+        ) )
       }
     }
-    // if ( ev.categories[0].id === "wildfires" ) {
-    //   return <LocationMarker
-    //     eventType={ev.categories[0].id}
-    //     lat={ev.geometry[0].coordinates[1]}
-    //     lng={ev.geometry[0].coordinates[0]}
-    //     onClick={ () => setLocationInfo( { id: ev.id, title: ev.title } ) } 
-    //   />
-    // }
     return null
   } )
 

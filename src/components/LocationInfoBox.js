@@ -7,6 +7,8 @@ const LocationInfoBox = ({ info }) => {
       <ul>
         <li>ID: <strong>{ info.id }</strong></li>
         <li>TITLE: <strong>{ info.title }</strong></li>
+        <li>DATE: <strong>{ info.date }</strong></li>
+        <li>LOCATION TYPE: <strong>{ info.locationType }</strong></li>
       </ul>
     </div>
   )
